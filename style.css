@@ -1,4 +1,15 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 button {
-    text-align: center;
-    size: 200px;
+    width: 300px;
+    height: auto;
+    background-color: aquamarine;
+    border-color: rgba(0, 0, 0, 0.688);
+    border-radius: 4px;
+    font-size: 100px;
+    margin-left: 37%;
 }

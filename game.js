@@ -1,8 +1,9 @@
 const choices = ["rock","paper","scissors"]
+const winner = [];
 
 function game() {
     for (let i = 0; i <= 5; i++) {
-        playRound();
+        playRound(i);
     }
     logWins();
 }
@@ -12,7 +13,7 @@ function playRound(round) {
     const computerSelection = computerChoice();
     const winner = checkWinner(playerSelection, computerSelection);
     winners.push(winner);
-    logRound(playerSelection, computeSelection, winner)
+    logRound(playerSelection, computerSelection, winner)
 }
 
 function playerChoice () {
