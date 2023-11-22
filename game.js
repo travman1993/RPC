@@ -10,9 +10,9 @@ function game() {
 function playRound(round) {
     const playSelection = playerChoice();
     const computerSelection = computerChoice();
-    const winner = checkWinner(playerSelection,computerSelection)
+    const winner = checkWinner(playerSelection, computerSelection);
     winners.push(winner);
-    logRound(playerSelection,computeSelection,winner)
+    logRound(playerSelection, computeSelection, winner)
 }
 
 function playerChoice () {

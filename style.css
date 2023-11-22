@@ -1,4 +1,4 @@
 button {
-    display: flex;
-    align-items: center;
+    text-align: center;
+    size: 200px;
 }
