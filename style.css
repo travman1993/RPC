@@ -18,3 +18,25 @@ p {
     border: 10px inset rgba(201, 2, 2, 0.754);
     background-color: #e8686886;
 }
+
+#photocontainer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: space-between;
+    font-size: 30px;
+    padding-bottom: 4%;
+}
+
+.photo1 {
+    padding-right: 10%;
+}
+
+.photo3 {
+    padding-left: 10%;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
