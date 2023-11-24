@@ -3,7 +3,7 @@ const winner = [];
 
 function game() {
     for (let i = 1; i <= 5; i++) {
-        playRound(i);
+        playRound();
     }
     document.querySelector('button').textContent = 'Play new game';
     logWins();
@@ -13,7 +13,7 @@ function playRound(round) {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
     const winner = checkWinner(playerSelection, computerSelection);
-    winners.push(winner);
+    winner.push = 'winner';
     logRound(playerSelection, computerSelection, winner, round);
 }
 
@@ -60,9 +60,9 @@ function checkWinner(choiceP, choiceC) {
 }
 
 function logWins() {
-    let playerWins = winners.filter((item) => item == "Player").length;
-    let computerWins = winners.filter((item) => item == "Computer").length;
-    let ties = winners.filter((item) => item == "Tie").length;
+    let playerWins = winner.filter((item) => item == "Player").length;
+    let computerWins = winner.filter((item) => item == "Computer").length;
+    let ties = winner.filter((item) => item == "Tie").length;
     console.log("Results:");
     console.log("Player Wins:", playerWins);
     console.log("Computer Wins:", computerWins);
