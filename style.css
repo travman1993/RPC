@@ -8,7 +8,13 @@ button {
     width: 300px;
     height: auto;
     background-color: aquamarine;
-    border-color: rgba(0, 0, 0, 0.688);
+    border-color: rgba(255, 255, 255, 0.688);
     border-radius: 4px;
     font-size: 100px;
+    border: rgb(3, 3, 3) inline 10px;
+}
+
+p {
+    border: 10px inset rgba(201, 2, 2, 0.754);
+    background-color: #e8686886;
 }
