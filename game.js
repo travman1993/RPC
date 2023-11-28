@@ -14,14 +14,15 @@ function resetGame() {
 }
 
 function startGame() {
-    let imgs = document.querySelectorAll("img");
-    imgs.forEach((img) =>
+    let img = document.querySelectorAll(img);
+    img.forEach(("img") =>
       img.addEventListener("click", () => { 
         if (img.id) {
           playRound(img.id);
         }
       })
    );
+   console.log
 }
 
 function playRound(playerChoice) {
