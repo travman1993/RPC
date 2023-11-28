@@ -6,23 +6,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Rock Paper Scissors</title>
         <link rel="stylesheet" href="style.css" />
-        <script src="game.js">defer</script>
+        <script src="game.js" defer></script>
     </head>
     <body style="background-color: #d2b794;">
         <div class="flex-container">
             <h1 style="font-size: 125px; font-weight: 500; display: center; background-color: rgba(0, 0, 0, 0.566); border: black ridge 15px; padding-bottom: 2%; padding-top: 2%; text-align: center;">Rock Paper Scissors</h1>
-                <div id="photocontainer">
-                    <div class="photo1">
-                        <img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3bdb2575-9a92-42f8-8472-bb78c7bd118a_720x405.jpeg" style="border: solid black 5px;"><u>Rock</u></img>
-                    </div>
-                    <div class="photo2">
-                        <img src="https://as2.ftcdn.net/v2/jpg/04/97/13/77/1000_F_497137767_aDHz0by3aRzpEyUjGK28g0eyCnVU5DaG.jpg" style="border: solid black 5px"><u>Paper</u></img>
-                    </div>
-                    <div class="photo3">
-                        <img src="https://i.chzbgr.com/full/7960562432/hE39C6433/just-a-little-of-the-top" style="border: solid black 5px"><u>Scissors</u></img>
-                    </div>
-                </div>
-            <button onclick="game()">Start Game</button>
+            <div class="score">
+                <h1 class="Ties">Ties: 0</h1>
+            </div>
+            <div class="winnerDiv">
+                <h1 class="winner"></h1>
+                <button class="reset" onclick="resetGame()">Play Again?</button>
+            </div>
+            <div class="playerSelection">
+                <h3 class="playerChoice"></h3>
+                <h3 class="playerScore">Score: 0</h3>
+                <div class="playerImg">
+                    <img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3bdb2575-9a92-42f8-8472-bb78c7bd118a_720x405.jpeg" alt="Picture of rock" style="border: solid black 5px;" class="pImg" id="rock" />
+                    <img src="https://as2.ftcdn.net/v2/jpg/04/97/13/77/1000_F_497137767_aDHz0by3aRzpEyUjGK28g0eyCnVU5DaG.jpg" alt="Picture of paper" style="border: solid black 5px" class="pImg" id="paper" />
+                    <img src="https://i.chzbgr.com/full/7960562432/hE39C6433/just-a-little-of-the-top" atl="Picture of scissors" style="border: solid black 5px" class="pImg" id="rock" />
+                </div>                       
+            </div>
+            <div class="computerSelection">
+                <h3 class="computerChoice"></h3>
+                <h3 class="computerScore">Score: 0</h3>
+                <div class="computerImg">
+                    <img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3bdb2575-9a92-42f8-8472-bb78c7bd118a_720x405.jpeg" alt="Picture of rock" style="border: solid black 5px;" class="rock" />
+                    <img src="https://as2.ftcdn.net/v2/jpg/04/97/13/77/1000_F_497137767_aDHz0by3aRzpEyUjGK28g0eyCnVU5DaG.jpg" alt="Picture of paper" style="border: solid black 5px" class="paper" />
+                    <img src="https://i.chzbgr.com/full/7960562432/hE39C6433/just-a-little-of-the-top" atl="Picture of scissors" style="border: solid black 5px" class="rock" />
+                </div>                       
+            </div>
             <p style="text-align: center; font-weight: bold; font-size: 55px;">Game On!!! Bring your A Game!<br> This game is played on console!</p>
         </div>
     </body>

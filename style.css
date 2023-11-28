@@ -1,17 +1,16 @@
+* {
+    border: red 2px solid;
+}
+
 .flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
-button {
-    width: 300px;
-    height: auto;
-    background-color: aquamarine;
-    border-color: rgba(255, 255, 255, 0.688);
-    border-radius: 4px;
-    font-size: 100px;
-    border: rgb(3, 3, 3) inline 10px;
+.reset {
+    display: none;
 }
 
 p {
@@ -19,24 +18,34 @@ p {
     background-color: #e8686886;
 }
 
-#photocontainer {
+.playerSelection {
     display: flex;
     flex-direction: row;
-    text-align: center;
     align-content: space-between;
-    font-size: 30px;
     padding-bottom: 4%;
+    font-size: 30px;
 }
 
-.photo1 {
-    padding-right: 10%;
+.computerSelection {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    padding-bottom: 4%;
+    font-size: 30px;
 }
 
-.photo3 {
-    padding-left: 10%;
-}
 
 img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
+}
+
+.computerScore {
+    display: flex;
+    align-items: center;
+}
+
+.playerScore {
+    display: flex;
+    align-items: center;
 }
