@@ -41,5 +41,11 @@ img {
 }
 
 .computerScore {
-    
+    display: flex;
+    align-items: center;
+}
+
+.playerScore {
+    display: flex;
+    align-items: center;
 }
