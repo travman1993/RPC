@@ -43,9 +43,15 @@ img {
 .computerScore {
     display: flex;
     align-items: center;
+    padding-right: 10px;
 }
 
 .playerScore {
     display: flex;
     align-items: center;
+    padding-right: 10px;
+}
+
+.startGame {
+    border: black 5px solid;
 }

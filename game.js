@@ -15,14 +15,15 @@ function resetGame() {
 
 function startGame() {
     let img = document.querySelectorAll(img);
-    img.forEach(("img") =>
-      img.addEventListener("click", () => { 
-        if (img.id) {
-          playRound(img.id);
-        }
-      })
-   );
-   console.log
+    img.forEach((img) => {
+      img.addEventListener("click", (img) => { 
+        let playerChoice = img.target.id;
+        playRound(playerChoice, computerChoice);
+        displayImage(playerChoice, computerChoice);
+        resetGame();
+      });
+    });
+   console.log(startGame);
 }
 
 function playRound(playerChoice) {
@@ -55,7 +56,7 @@ function displayEnd() {
 
 function displayRound(playerChoice, computerChoice, winner) {
     document.querySelector(".playerChoice").textContent = `You Chose: ${
-        playChoice.charAt(0).toUpperCase()+ playerChoice.slice(1)
+        playerChoice.charAt(0).toUpperCase()+ playerChoice.slice(1)
     }`;
     document.querySelector(".playerChoice").textContent = `The Computer Chose: ${
         computerChoice.charAt(0).toUpperCase()+ computerChoice.slice(1)
