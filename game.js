@@ -33,20 +33,39 @@ function playRound(playerChoice) {
     const winner = checkWinner(playerChoice, computerChoice);
     tallyWins();
     displayRound(playerChoice, computerChoice, winner);
-    wins = checkWins();
-    if (wins = 5) {
+    wins = checkWins()
+    if (wins >= 5) {
         displayEnd();
     }
 }
 
-function displayEnd() {
-    let playerWins = winner.filter((item) => item == "Player").length;
-    if (playerWins == 5) {
-        document.querySelector(".winner").textContent = "You Won, Great Job!"
-    } else {
-        document.querySelector(".winner").textContent = "Sorry Computer Won..:(, Maybe Next Time."
-    }
-    document.querySelector(".reset").styleDisplay = "flex";
+function computerSelect() {
+    const choice = choices[Math.floor(Math.random() * choices.length)];
+    document.querySelector(`.${choice}`);
+return choice;
+}
+
+function checkWinner(playerChoice, computerChoice) {
+    if (
+       (playerChoice === "papper" & computerChoice === "rock") || 
+       (playerChoice === "rock" & computerChoice === "scissors") ||
+       (playerChoice === "scissors" & computerChoice === "paper")
+   ) {
+       return "Player";
+   } else if (choice1 === choice) {
+     return "Tie";
+   } else {
+       return "Computer";
+   }
+}
+
+function tallyWins() {
+    const pWinCount = winners.filter((item) => item == "Player").length;
+    const cWinCount = winners.filter((item) => item == "Computer").length;
+    const ties = winners.filter((item) => item == "Tie").length;
+    document.querySelector(".playerScore").textContent = `Score: ${pWinCount}`;
+    document.querySelector(".computerScore").textContent = `Score: ${cWinCount}`;
+    document.querySelector(".ties");
 }
 
 function displayRound(playerChoice, computerChoice, winner) {
@@ -67,21 +86,7 @@ function displayRoundWinner(winner) {
     } else {
         document.querySelector(".winner").textContent = "You Tied The Best of The Best!";
     }
-}
-
-function tallyWins() {
-    const pWinCount = winners.filter((item) => item == "Player").length;
-    const cWinCount = winners.filter((item) => item == "Computer").length;
-    const ties = winners.filter((item) => item == "Tie").length;
-    document.querySelector(".playerScore").textContent = `Score: ${pWinCount}`;
-    document.querySelector(".computerScore").textContent = `Score: ${cWinCount}`;
-    document.querySelector(".ties");
-}
-
-function computerSelect() {
-    const choice = choices[Math.floor(Math.random() * choices.length)];
-    document.querySelector(`.${choice}`);
-return choice;
+    console.log(displayRoundWinner)
 }
 
 function checkWins() {
@@ -90,23 +95,13 @@ function checkWins() {
     return Math.max(pWinCount,cWinCount);
 }
 
-function checkWinner(choice1, choice2) {
-     if (
-        (choice1 === "papper" & choice2 == "rock") || 
-        (choice1 === "rock" & choice2 == "scissors") ||
-        (choice1 === "scissors" & choice2 == "paper")
-    ) {
-        return "Player";
-    } else if (choice1 == choice2) {
-      return "Tie";
+function displayEnd() {
+    let playerWins = winner.filter((item) => item == "Player").length;
+    if (playerWins == 5) {
+        document.querySelector(".winner").textContent = "You Won, Great Job!"
     } else {
-        return "Computer";
+        document.querySelector(".winner").textContent = "Sorry Computer Won..:(, Maybe Next Time."
     }
-}
-
-function setWins() {
-    const pWinCount = winners.filter((item) => item == "Player").length;
-    const cWinCount = winners.filter((item) => item == "Computer").length;
-    const ties = winners.filter((item) => item == "Tie").length;
+    document.querySelector(".reset").styleDisplay = "flex";
 }
 startGame();
