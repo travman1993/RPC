@@ -1,5 +1,5 @@
-const choices = ["rock", "paper", "scissors"];
 let winners = [];
+const choices = ["rock", "paper", "scissors"];
 
 function resetGame() {
     winners = [];
@@ -34,7 +34,7 @@ function playRound(playerChoice) {
     tallyWins();
     displayRound(playerChoice, computerChoice, winner);
     wins = checkWins();
-    if (wins == 5) {
+    if (wins = 5) {
         displayEnd();
     }
 }
@@ -92,12 +92,12 @@ function checkWins() {
 
 function checkWinner(choice1, choice2) {
      if (
-        (choice1 === "papper" > choice2 == "rock") || 
-        (choice1 === "rock" > choice2 == "scissors") ||
-        (choice1 === "scissors" > choice2 == "paper")
+        (choice1 === "papper" & choice2 == "rock") || 
+        (choice1 === "rock" & choice2 == "scissors") ||
+        (choice1 === "scissors" & choice2 == "paper")
     ) {
         return "Player";
-    } else if (choice1 >= choice2) {
+    } else if (choice1 == choice2) {
       return "Tie";
     } else {
         return "Computer";
