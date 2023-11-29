@@ -52,17 +52,17 @@ function displayEnd() {
 function displayRound(playerChoice, computerChoice, winner) {
     document.querySelector(".playerChoice").textContent = `You Chose: ${
         playerChoice.charAt(0).toUpperCase()+ playerChoice.slice(1)
-    }`;
+     }`;
     document.querySelector(".computerChoice").textContent = `Computer Chose: ${
         computerChoice.charAt(0).toUpperCase()+ computerChoice.slice(1)
-    }`;
+     }`;
     displayRoundWinner(winner);
 }
 
 function displayRoundWinner(winner) {
     if (winner = "Player") {
         document.querySelector(".winner").textContent = "You Won The Round";
-    } if (winner = "Computer") {
+    } else if (winner = "Computer") {
         document.querySelector(".winner").textContent = "Computer Had The Best of YOU!!";
     } else {
         document.querySelector(".winner").textContent = "You Tied The Best of The Best!";

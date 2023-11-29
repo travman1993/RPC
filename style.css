@@ -27,16 +27,17 @@ p {
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    padding-bottom: 4%;
     font-size: 30px;
+    align-items: center;
 }
 
 .computerSelection {
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    padding-bottom: 4%;
     font-size: 30px;
+    padding-left: 14%;
+    align-items: center;
 }
 
 .computerChoice {
