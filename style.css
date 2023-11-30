@@ -1,7 +1,3 @@
-* {
-    border: red 2px solid;
-}
-
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -9,9 +5,9 @@
 }
 
 .flex-container2 {
-    display: flex;
-    flex-direction: column;
+    align-content: center;
     align-items: center;
+    padding-left: 40%;
 }
 
 .reset {
@@ -21,6 +17,7 @@
 p {
     border: 10px inset rgba(201, 2, 2, 0.754);
     background-color: #e8686886;
+    margin-top: -1%;
 }
 
 .playerSelection {
@@ -29,30 +26,18 @@ p {
     align-content: space-between;
     font-size: 30px;
     align-items: center;
+    display: inline;
 }
 
 .computerSelection {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
     font-size: 30px;
-    padding-left: 14.25%;
-    align-items: center;
-}
-
-.computerChoice {
-    display: flex
+    padding-left: 27%;
+    position:relative;
 }
 
 img {
     width: 200px;
     height: 200px;
-}
-
-.computerScore {
-    display: flex;
-    align-items: center;
-    padding-right: 20px;
 }
 
 .playerScore {
@@ -65,14 +50,6 @@ img {
     border: black 5px solid;
 }
 
-.playerChoice {
-    display: flex;
-}
-
-.ties {
-    align-content: center;
-}
-
 .winnerDiv {
-    align-items: center;
+    padding-left: 40%;
 }

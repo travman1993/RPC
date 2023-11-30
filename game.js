@@ -5,7 +5,6 @@ function resetGame() {
     winners = [];
     document.querySelector(".playerScore").textContent = "Score: 0";
     document.querySelector(".computerScore").textContent = "Score: 0";
-    document.querySelector(".ties").textContent = "Score: 0";
     document.querySelector(".winner").textContent = "";
     document.querySelector("playerChoice").textContent = "";
     document.querySelector(".computerChoice").textContent = "";
@@ -25,18 +24,15 @@ function startGame() {
   }
 
 function playRound(playerChoice) {
-    let wins = checkWins();
+    let wins = checkWins()
     if(wins >= 5){
-        return;
+        displayEnd;
     }
+    const computerScore = tallyWin();
+    const playerScore = tallyWins(); 
     const computerChoice = computerSelect();
     const winner = checkWinner(playerChoice, computerChoice);
-    tallyWins();
     displayRound(playerChoice, computerChoice, winner);
-    wins = checkWins()
-    if (wins >= 5) {
-        displayEnd();
-    }
 }
 
 function computerSelect() {
@@ -45,14 +41,14 @@ function computerSelect() {
 return choice;
 }
 
-function checkWinner(playerChoice, computerChoice) {
+function checkWinner(choice1, choice) {
     if (
-       (playerChoice === "papper" & computerChoice === "rock") || 
-       (playerChoice === "rock" & computerChoice === "scissors") ||
-       (playerChoice === "scissors" & computerChoice === "paper")
+       (choice1 === "papper" & choice === "rock") || 
+       (choice1 === "rock" & choice === "scissors") ||
+       (choice1 === "scissors" & choice === "paper")
    ) {
        return "Player";
-   } else if (choice1 === choice) {
+   } else if (choice1 == choice) {
      return "Tie";
    } else {
        return "Computer";
@@ -61,11 +57,12 @@ function checkWinner(playerChoice, computerChoice) {
 
 function tallyWins() {
     const pWinCount = winners.filter((item) => item == "Player").length;
-    const cWinCount = winners.filter((item) => item == "Computer").length;
-    const ties = winners.filter((item) => item == "Tie").length;
     document.querySelector(".playerScore").textContent = `Score: ${pWinCount}`;
+}
+
+function tallyWin() {
+    const cWinCount = winners.filter((item) => item == "Computer").length;
     document.querySelector(".computerScore").textContent = `Score: ${cWinCount}`;
-    document.querySelector(".ties");
 }
 
 function displayRound(playerChoice, computerChoice, winner) {
@@ -80,13 +77,12 @@ function displayRound(playerChoice, computerChoice, winner) {
 
 function displayRoundWinner(winner) {
     if (winner = "Player") {
-        document.querySelector(".winner").textContent = "You Won The Round";
+        document.querySelector(".winners").textContent = "You Won The Round";
     } else if (winner = "Computer") {
-        document.querySelector(".winner").textContent = "Computer Had The Best of YOU!!";
+        document.querySelector(".winners").textContent = "Computer Had The Best of YOU!!";
     } else {
-        document.querySelector(".winner").textContent = "You Tied The Best of The Best!";
+        document.querySelector(".winners").textContent = "You Tied The Best of The Best!";
     }
-    console.log(displayRoundWinner)
 }
 
 function checkWins() {
