@@ -25,8 +25,8 @@ function startGame() {
 
 function playRound(playerChoice) {
     let wins = checkWins()
-    if(wins == 5){
-        return displayEnd();
+    if(wins >= 5){
+        return;
     }
     const computerScore = tallyWin();
     const playerScore = tallyWins(); 
@@ -34,6 +34,9 @@ function playRound(playerChoice) {
     const winner = checkWinner(playerChoice, computerChoice);
     winners.push(winner);
     displayRound(playerChoice, computerChoice, winners);
+    if (wins == 5) {
+        displayEnd();
+    }
 }
 
 function computerSelect() {
@@ -44,9 +47,9 @@ return choice;
 
 function checkWinner(playerChoice, computerChoice) {
     if (
-       (playerChoice == "papper" & computerChoice === "rock") || 
-       (playerChoice == "rock" & computerChoice === "scissors") ||
-       (playerChoice == "scissors" & computerChoice === "paper")
+        (playerChoice === "rock" & computerChoice === "scissors") ||
+        (playerChoice === "papper" & computerChoice === "rock") || 
+        (playerChoice === "scissors" & computerChoice === "paper")
    ) {
        return "Player";
    } else if (playerChoice == computerChoice) {
@@ -76,12 +79,12 @@ function displayRound(playerChoice, computerChoice, winner) {
     displayRoundWinner(winner);
 }
 
-function displayRoundWinner(winners) {
-    if (winners = "Player") {
+function displayRoundWinner(winner) {
+    if (winner = "Player") {
         document.querySelector(".winners").textContent = "You Won The Round";
-    } else if (winners = "Computer") {
+    } else if (winner = "Computer") {
         document.querySelector(".winners").textContent = "Computer Had The Best of YOU!!";
-    } else {
+    } else{
         document.querySelector(".winners").textContent = "You Tied The Best of The Best!";
     }
 }
@@ -93,7 +96,7 @@ function checkWins() {
 }
 
 function displayEnd() {
-    let playerWins = winner.filter((item) => item == "Player").length;
+    let playerWins = winners.filter((item) => item == "Player").length;
     if (playerWins >= 5) {
         document.querySelector(".winner").textContent = "You Won, Great Job!"
     } else {
