@@ -25,14 +25,15 @@ function startGame() {
 
 function playRound(playerChoice) {
     let wins = checkWins()
-    if(wins >= 5){
-        displayEnd;
+    if(wins == 5){
+        return displayEnd();
     }
     const computerScore = tallyWin();
     const playerScore = tallyWins(); 
     const computerChoice = computerSelect();
     const winner = checkWinner(playerChoice, computerChoice);
-    displayRound(playerChoice, computerChoice, winner);
+    winners.push(winner);
+    displayRound(playerChoice, computerChoice, winners);
 }
 
 function computerSelect() {
@@ -41,14 +42,14 @@ function computerSelect() {
 return choice;
 }
 
-function checkWinner(choice1, choice) {
+function checkWinner(playerChoice, computerChoice) {
     if (
-       (choice1 === "papper" & choice === "rock") || 
-       (choice1 === "rock" & choice === "scissors") ||
-       (choice1 === "scissors" & choice === "paper")
+       (playerChoice == "papper" & computerChoice === "rock") || 
+       (playerChoice == "rock" & computerChoice === "scissors") ||
+       (playerChoice == "scissors" & computerChoice === "paper")
    ) {
        return "Player";
-   } else if (choice1 == choice) {
+   } else if (playerChoice == computerChoice) {
      return "Tie";
    } else {
        return "Computer";
@@ -75,10 +76,10 @@ function displayRound(playerChoice, computerChoice, winner) {
     displayRoundWinner(winner);
 }
 
-function displayRoundWinner(winner) {
-    if (winner = "Player") {
+function displayRoundWinner(winners) {
+    if (winners = "Player") {
         document.querySelector(".winners").textContent = "You Won The Round";
-    } else if (winner = "Computer") {
+    } else if (winners = "Computer") {
         document.querySelector(".winners").textContent = "Computer Had The Best of YOU!!";
     } else {
         document.querySelector(".winners").textContent = "You Tied The Best of The Best!";
@@ -93,11 +94,12 @@ function checkWins() {
 
 function displayEnd() {
     let playerWins = winner.filter((item) => item == "Player").length;
-    if (playerWins == 5) {
+    if (playerWins >= 5) {
         document.querySelector(".winner").textContent = "You Won, Great Job!"
     } else {
         document.querySelector(".winner").textContent = "Sorry Computer Won..:(, Maybe Next Time."
     }
     document.querySelector(".reset").styleDisplay = "flex";
+    return resetGame();
 }
 startGame();

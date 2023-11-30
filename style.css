@@ -10,10 +10,6 @@
     padding-left: 40%;
 }
 
-.reset {
-    display: none;
-}
-
 p {
     border: 10px inset rgba(201, 2, 2, 0.754);
     background-color: #e8686886;
