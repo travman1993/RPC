@@ -25,7 +25,7 @@ function startGame() {
 
 function playRound(playerChoice) {
     let wins = checkWins()
-    if(wins >= 5){
+    if(wins >= 6){
         return;
     }
     const computerScore = tallyWin();
@@ -52,7 +52,7 @@ function checkWinner(playerChoice, computerChoice) {
         (playerChoice === "scissors" & computerChoice === "paper")
    ) {
        return "Player";
-   } else if (playerChoice == computerChoice) {
+   } else if (playerChoice === computerChoice) {
      return "Tie";
    } else {
        return "Computer";
@@ -76,17 +76,6 @@ function displayRound(playerChoice, computerChoice, winner) {
     document.querySelector(".computerChoice").textContent = `Computer Chose: ${
         computerChoice.charAt(0).toUpperCase()+ computerChoice.slice(1)
      }`;
-    displayRoundWinner(winner);
-}
-
-function displayRoundWinner(winner) {
-    if (winner = "Player") {
-        document.querySelector(".winners").textContent = "You Won The Round";
-    } else if (winner = "Computer") {
-        document.querySelector(".winners").textContent = "Computer Had The Best of YOU!!";
-    } else{
-        document.querySelector(".winners").textContent = "You Tied The Best of The Best!";
-    }
 }
 
 function checkWins() {
